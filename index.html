@@ -10,13 +10,32 @@
 <!-- <h1>EN UNA ESCALA MAYOR UN ACORDE LO DEFINE SI ES MAYOR O MENOS SU TERCERA ( en la escala mayor es 1 mayor, 2 menor, 3 menor, 4 mayor, 5 mayor, 6 menor, 7 disminuido)</h1> -->
 <div class="acorde">
     <div class="acordetonica">
+    	<button onclick="escala(A)">A</button>
+    	<button onclick="escala(B)">B</button>
+    	<button onclick="escala(C)">C</button>
+    	<button onclick="escala(D)">D</button>
+    	<button onclick="escala(E)">E</button>
+    	<button onclick="escala(F)">F</button>
+    	<button onclick="escala(G)">G</button>
     	<p id="notas"></p>
     </div>    
 </div>
 
 <script>
-    var C = ["C","D","E","F","G","A","B"];
-    document.getElementById("notas").innerHTML = C;
-   console.log(C)      
+//			       1    1   1/2  1    1      1    1/2
+    var A = ["A","Bm","C#m","D","E","F#m","G#dim","A"];
+    var B = ["B","C#m","D#m","E","F#","G#m","A#dim","B"];
+    var C = ["C","Dm","Em","F","G","Am","Bdim","C"];
+    var D = ["D","Em","F#m","G","A","Bm","C#dim","B"];
+    var E = ["E","F#m","G#m","A","B","C#m","D#dim","E"];
+    var F = ["F","Gm","Am","A#","C","Dm","Edism","F"];
+    var G = ["G","Am","Bm","C","D","Em","F#dism","G" ]
+    
+    function escala(nota){
+    	document.getElementById("notas").innerHTML = nota;
+    }
+    
+    //document.getElementById("notas").innerHTML = C;
+   //console.log(C)      
  </script>
 </html>
