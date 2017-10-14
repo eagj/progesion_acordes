@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        //              1   2    3   4   5    6   7    8   9   10  11  12
+        var acordes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];   
+        function notas(numero){           
+            tonica = numero;
+            tercera = tonica+4;
+            quinta = tercera+3;
+            $("td.tonica").text(acordes[tonica]);
+            $("td.tercera").text(acordes[tercera]);
+            $("td.quinta").text(acordes[quinta]);
+            $("td.tonica2").text(acordes[tonica+2]);
+            $("td.tercera2").text(acordes[tercera+1]);
+            $("td.quinta2").text(acordes[quinta+2]);
+            $("td.tonica3").text(acordes[tonica+4]);
+            $("td.tercera3").text(acordes[tercera+3]);
+            $("td.quinta3").text(acordes[quinta+4]);
+            $("td.tonica4").text(acordes[tonica+5]);
+            $("td.tercera4").text(acordes[tercera+5]);
+            $("td.quinta4").text(acordes[quinta+5]);
+            $("td.tonica5").text(acordes[tonica+7]);
+            $("td.tercera5").text(acordes[tercera+7]);
+            $("td.quinta5").text(acordes[quinta+7]);
+            $("td.tonica6").text(acordes[tonica+9]);
+            $("td.tercera6").text(acordes[tercera+8]);
+            $("td.quinta6").text(acordes[quinta+9]);
+            $("td.tonica7").text(acordes[tonica+11]);
+            $("td.tercera7").text(acordes[tercera+10]);
+            $("td.quinta7").text(acordes[quinta+10]);            
+        }
+    </script>
+</head>
+<a class="tonica" onclick="notas(0);" href="#">A</a>
+<a class="tonica" onclick="notas(1);" href="#">A#</a>
+<a class="tonica" onclick="notas(2);" href="#">B</a>
+<a class="tonica" onclick="notas(3);" href="#">C</a>
+<a class="tonica" onclick="notas(4);" href="#">C#</a>
+<a class="tonica" onclick="notas(5);" href="#">D</a>
+<a class="tonica" onclick="notas(6);" href="#">D#</a>
+<a class="tonica" onclick="notas(7);" href="#">E</a>
+<a class="tonica" onclick="notas(8);" href="#">F</a>
+<a class="tonica" onclick="notas(9);" href="#">F#</a>
+<a class="tonica" onclick="notas(10);" href="#">G</a>
+<a class="tonica" onclick="notas(11);" href="#">G#</a>
+
+
+<table>
+    <tr>
+        <td class="tonica"></td>
+        <td class="tercera"></td>
+        <td class="quinta"></td>
+    </tr>
+    <tr>
+        <td class="tonica2"></td>
+        <td class="tercera2"></td>
+        <td class="quinta2"></td>
+    </tr>
+    <tr>
+        <td class="tonica3"></td>
+        <td class="tercera3"></td>
+        <td class="quinta3"></td>
+    </tr>
+    <tr>
+        <td class="tonica4"></td>
+        <td class="tercera4"></td>
+        <td class="quinta4"></td>
+    </tr>
+    <tr>
+        <td class="tonica5"></td>
+        <td class="tercera5"></td>
+        <td class="quinta5"></td>
+    </tr>
+    <tr>
+        <td class="tonica6"></td>
+        <td class="tercera6"></td>
+        <td class="quinta6"></td>
+    </tr>
+    <tr>
+        <td class="tonica7"></td>
+        <td class="tercera7"></td>
+        <td class="quinta7"></td>
+    </tr>
+</table>
+
+
+<body>
+    
+</body>
+</html>
