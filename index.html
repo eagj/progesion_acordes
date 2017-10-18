@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	
+	 <script>
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip('show');
+	});
+		
+</script>
     <script>
         //              1   2    3   4   5    6   7    8   9   10  11  12
         //var acordes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];
@@ -22,9 +27,10 @@
             tonica = numero;
             tercera = tonica+4;
             quinta = tercera+3;
-             $("table").addClass("table table-striped table-bordered table-hover"); 
+         	$("table").addClass("table table-striped table-bordered table-hover"); 
             $(".escala").addClass("alert alert-success");            
-         	$(".escala").html("<p>" +"<span> "+"Escala mayor de " + acordes[tonica] +"</span>" +" ( " +"<span data-toggle='tooltip'  title='I' tabindex='0'>"+ acordes[tonica] +"</span>" +" " +acordes[tonica+2] +" " +acordes[tonica+4] +" "+ acordes[tonica+5] +" "+ acordes[tonica+7] +" "+ acordes[tonica+9] +" "+ acordes[tonica+11] +" ) " +"</p>" );
+         	$(".escala p.mayor").html("Escala mayor de&nbsp;" +"<strong> " +" " +acordes[tonica] +"</strong>&nbsp;" +" ( " + acordes[tonica] +" " +acordes[tonica+2] +" " +acordes[tonica+4] +" "+ acordes[tonica+5] +" "+ acordes[tonica+7] +" "+ acordes[tonica+9] +" "+ acordes[tonica+11] +" )" +"<br />" );
+         	$(".escala p.menor").html("La escala menor de " +"<strong> " +acordes[tonica] +"</strong> " +" " +"es equivalente a su sexta mayor, es decir la escala de" +" " +"<strong> "+acordes[tonica+9] +"</strong>");         	
          	$("td.notaprimera").text("I");
          	$("td.notatercera").text("III");
          	$("td.notaquinta").text("V");	
@@ -59,6 +65,7 @@
             $("button.tonica").removeClass( "active" );              
         }
     </script>
+   
     
 </head>
 <body>
@@ -79,9 +86,12 @@
 		<button class="tonica btn btn btn-light btn-lg border" onclick="notas(9);" >A</button>
 		<button class="tonica btn btn-dark btn-sm" onclick="notas(10);" >A#</button>
 		<button class="tonica btn btn btn-light btn-lg border" onclick="notas(11);" >B</button>
-		<div class="tonica octava btn btn btn-outline-secondary btn-lg" title="Esta tecla es la ocatava, que es misma que con la que empiezas">C</div>
+		<!-- <div class="tonica octava btn btn btn-outline-secondary btn-lg" title="Esta tecla es la ocatava, que es misma que con la que empiezas">C</div> -->
 	</div>
-	<div class="escala row d-flex justify-content-center" role="alert"></div>	
+	<div class="escala row d-flex justify-content-center" role="alert">
+		<p class="mayor"></p>
+		<p class="menor"></p>
+	</div>	
 	<table>
 		<tr>
 			<td class="nada"></td>
@@ -132,15 +142,11 @@
 	        <td class="quinta7"></td>
 	    </tr>
 	</table>
-	<span data-toggle='tooltip' title='I'>prueba tooltip</span>
+	<!-- <span data-toggle='tooltip' title='I'>prueba tooltip</span> -->
+	
 </div>
 
-<script>
-	$(function () {
-		$('[data-toggle="tooltip"]').tooltip('enable');
-	});
-		
-</script>
+
     
 </body>
 </html>

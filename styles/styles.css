@@ -1,8 +1,16 @@
-sup {
+/*sup {
     top: -.2em;
     left: -9px;
     font-weight: 800;
+}*/
+.escala p{
+	width:100%;
+	text-align: center;
 }
+	.escala p.menor{
+		font-size: .8rem;
+    	background-color: #fff;
+	}
 table td{
 	text-align: center;
 }
