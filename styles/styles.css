@@ -43,6 +43,9 @@ td.notaprimera, td.notatercera, td.notaquinta{
     	flex: 0 1 auto;
     	font-size: 3rem;
 	}
+.menor{
+	display:none;
+}
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575px) {
 	.btn-group.botones button{
