@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5d9e3fba-0687-43bf-8c09-f298eb598693" name="acordes" url="http://ufopi.ddns.net:8090/progacordes/">
+        <fileTransfer host="ufopi.ddns.net" port="22" rootFolder="/media/gitprojects/www/progacordes" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

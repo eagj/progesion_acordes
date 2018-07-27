@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,26 +8,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/styles.css">
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="styles/styles.css">	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	 <script>
-	$(function () {
-		$('[data-toggle="tooltip"]').tooltip('show');
-	});
-		
-</script>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip('show');
+		});		
+	</script>
+	<script>
+		function escalamayor(){ 
+			$(".container.menor").hide();
+			$(".container.mayor").show();
+		}
+		function escalamenor(){ 
+			$(".container.menor").show();
+			$(".container.mayor").hide();
+		}
+	</script>
     <script>
         //              1   2    3   4   5    6   7    8   9   10  11  12
         //var acordes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];
         var acordes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B",];   
         //( en la escala mayor es 1 mayor, 2 menor, 3 menor, 4 mayor, 5 mayor, 6 menor, 7 disminuido)</h1>
 
-        function notas(numero){           
+        function notasmayor(numero){           
             tonica = numero;
             tercera = tonica+4;
             quinta = tercera+3;
@@ -68,29 +74,80 @@
             $("td.quinta7").text(acordes[quinta+10]);
             $("button.tonica").removeClass( "active" );              
         }
-    </script>
-   
+
+		function notasmenor(numero){           
+            tonica = numero;
+            tercera = tonica+3;
+            quinta = tercera+4;
+             $("table").addClass("table table-striped table-bordered table-hover"); 
+            $(".escala").addClass("alert alert-success");            
+         	$(".escala").html("Escala menor de " +acordes[tonica] +" ( " +acordes[tonica] +" " +acordes[tonica+2] +" " +acordes[tonica+3] +" " +acordes[tonica+5] +" " +acordes[tonica+7] +" " +acordes[tonica+8] +" " +acordes[tonica+10] +" )" +"\<br />" +"En la escala menor las notasmenor III,VI y VII son ♭" );
+         	$("td.notaprimera").text("I");
+         	$("td.notatercera").text("III");
+         	$("td.notaquinta").text("V");	
+         	$("td.tipoacorde").text("I Acorde menor");            
+            $("td.tonica").text(acordes[tonica]);
+            $("td.tercera").text(acordes[tercera]);
+            $("td.quinta").text(acordes[quinta]);
+            $("td.tipoacorde2").text("II Acorde dim");
+            $("td.tonica2").text(acordes[tonica+2]);
+            $("td.tercera2").text(acordes[tercera+2]);
+            $("td.quinta2").text(acordes[quinta+1]);
+            $("td.tipoacorde3").text("♭III Acorde Mayor");
+            $("td.tonica3").text(acordes[tonica+3]);
+            $("td.tercera3").text(acordes[tercera+4]);
+            $("td.quinta3").text(acordes[quinta+3]);
+            $("td.tipoacorde4").text("IV Acorde Menor");
+            $("td.tonica4").text(acordes[tonica+5]);
+            $("td.tercera4").text(acordes[tercera+5]);
+            $("td.quinta4").text(acordes[quinta+5]);
+            $("td.tipoacorde5").text("V Acorde Menor");
+            $("td.tonica5").text(acordes[tonica+7]);
+            $("td.tercera5").text(acordes[tercera+7]);
+            $("td.quinta5").text(acordes[quinta+7]);
+            $("td.tipoacorde6").text("♭VI Acorde Mayor");
+            $("td.tonica6").text(acordes[tonica+8]);
+            $("td.tercera6").text(acordes[tercera+9]);
+            $("td.quinta6").text(acordes[quinta+8]);
+            $("td.tipoacorde7").text("♭VII Acorde Mayor");
+            $("td.tonica7").text(acordes[tonica+10]);
+            $("td.tercera7").text(acordes[tercera+11]);
+            $("td.quinta7").text(acordes[quinta+10]);
+            $("button.tonica").removeClass( "active" );              
+        }
+    </script> 
     
 </head>
 <body>
-<div class="container">
+<div class="container my-2">
+	<div class="btn-group btn-group-toggle" data-toggle="buttons">
+		<label class="btn btn-info active">
+			<input type="radio" name="options" id="option1" autocomplete="off" checked onfocus="escalamayor();"> Mayor
+		</label>
+		<label class="btn btn-info">
+			<input type="radio" name="options" id="option2" autocomplete="off" onfocus="escalamenor();"> Menor
+		</label>
+	</div>
+</div>
+	
+<div class="container mayor">
 	<div class="row d-flex justify-content-center alert alert-warning text-center">
 		<p>El patrón de la escala mayor es <br />Tono – Tono – Semitono – Tono – Tono – Tono – Semitono</p>
 	</div>
 	 <div class="row btn-group botones" data-toggle="buttons"> 		
-		<button class="tonica btn btn btn-light btn-lg border" onclick="notas(0);" >C</button>
-		<button class="tonica btn btn-dark btn-sm" onclick="notas(1);" >C#</button>
-		<button class="tonica btn btn btn-light btn-lg border" onclick="notas(2);" >D</button>
-		<button class="tonica btn btn-dark btn-sm" onclick="notas(3);" >D#</button>
-		<button class="tonica btn btn btn-light btn-lg border" onclick="notas(4);" >E</button>
-		<button class="tonica btn btn btn-light btn-lg border" onclick="notas(5);" >F</button>
-		<button class="tonica btn btn-dark btn-sm" onclick="notas(6);" >F#</button>
-		<button class="tonica btn btn btn-light btn-lg border" onclick="notas(7);" >G</button>
-		<button class="tonica btn btn-dark btn-sm" onclick="notas(8);" >G#</button>
-		<button class="tonica btn btn btn-light btn-lg border" onclick="notas(9);" >A</button>
-		<button class="tonica btn btn-dark btn-sm" onclick="notas(10);" >A#</button>
-		<button class="tonica btn btn btn-light btn-lg border" onclick="notas(11);" >B</button>
-		<!-- <div class="tonica octava btn btn btn-outline-secondary btn-lg" title="Esta tecla es la ocatava, que es misma que con la que empiezas">C</div> -->
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmayor(0);" >C</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmayor(1);" >C#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmayor(2);" >D</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmayor(3);" >D#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmayor(4);" >E</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmayor(5);" >F</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmayor(6);" >F#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmayor(7);" >G</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmayor(8);" >G#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmayor(9);" >A</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmayor(10);" >A#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmayor(11);" >B</button>
+		<div class="tonica octava btn btn btn-outline-secondary btn-lg" title="Esta tecla es la ocatava, que es misma que con la que empiezas">C</div>
 	</div>
 	<div class="escala row d-flex justify-content-center" role="alert">
 		<p class="mayor"></p>
@@ -150,6 +207,78 @@
 	
 </div>
 
+<!-- ESCALA MENOR -->
+<div class="container menor">
+	<div class="row d-flex justify-content-center alert alert-warning text-center">
+		<p>El patrón de la escala mayor es <br />Tono – Semitono – Tono – Tono – Semitono – Tono – Tono</p>
+	</div>
+	 <div class="row btn-group botones" data-toggle="buttons"> 		
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmenor(0);" >C</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmenor(1);" >C#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmenor(2);" >D</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmenor(3);" >D#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmenor(4);" >E</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmenor(5);" >F</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmenor(6);" >F#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmenor(7);" >G</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmenor(8);" >G#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmenor(9);" >A</button>
+		<button class="tonica btn btn-dark btn-sm" onclick="notasmenor(10);" >A#</button>
+		<button class="tonica btn btn btn-light btn-lg border" onclick="notasmenor(11);" >B</button>
+		<div class="tonica octava btn btn btn-outline-secondary btn-lg" title="Esta tecla es la ocatava, que es misma que con la que empiezas">C</div>
+	</div>
+	<div class="escala row d-flex justify-content-center" role="alert"></div>	
+	<table>
+		<tr>
+			<td class="nada"></td>
+			<td class="notaprimera"></td>
+			<td class="notatercera"></td>
+			<td class="notaquinta"></td>
+		</tr>
+	    <tr>
+	    	<td class="tipoacorde"></td>	    	
+	        <td class="tonica"></td>
+	        <td class="tercera"></td>
+	        <td class="quinta"></td>
+	    </tr>
+	    <tr>
+	    	<td class="tipoacorde2"></td>
+	        <td class="tonica2"></td>
+	        <td class="tercera2"></td>
+	        <td class="quinta2"></td>
+	    </tr>
+	    <tr>
+    		<td class="tipoacorde3"></td>
+	        <td class="tonica3"></td>
+	        <td class="tercera3"></td>
+	        <td class="quinta3"></td>
+	    </tr>
+	    <tr>
+    		<td class="tipoacorde4"></td>
+	        <td class="tonica4"></td>
+	        <td class="tercera4"></td>
+	        <td class="quinta4"></td>
+	    </tr>
+	    <tr>
+	    	<td class="tipoacorde5"></td>
+	        <td class="tonica5"></td>
+	        <td class="tercera5"></td>
+	        <td class="quinta5"></td>
+	    </tr>
+	    <tr>
+	    	<td class="tipoacorde6"></td>
+	        <td class="tonica6"></td>
+	        <td class="tercera6"></td>
+	        <td class="quinta6"></td>
+	    </tr>
+	    <tr>
+	    	<td class="tipoacorde7"></td>
+	        <td class="tonica7"></td>
+	        <td class="tercera7"></td>
+	        <td class="quinta7"></td>
+	    </tr>
+	</table>
+</div>
 
     
 </body>
